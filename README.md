@@ -7,7 +7,8 @@
 
 ## Diagram
 ## Project Daily Progress
+
 ```mermaid
 graph LR;
- install sqlx --> deal with controllers -->  do the routes --> add jwt --> add docker --> cleanup;
+ sqlx --> controllers --> routes --> ajwt --> docker --> postgres;
 ```
