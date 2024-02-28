@@ -19,6 +19,7 @@ func CreateProduct(c *fiber.Ctx) error {
 	}
 
 	result := config.DB.Create(&newProduct)
+
 	if result.Error != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"message": "Internal Server Error",
@@ -34,12 +35,13 @@ func CreateProduct(c *fiber.Ctx) error {
 func GetProducts(c *fiber.Ctx) error {
 	products := []Product{}
 	result := config.DB.Find(&products)
+
 	if result.Error != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"message": "Failed to get products",
 		})
 	}
-	return c.JSON(products)
+	return c.Status(http.StatusOK).JSON(products)
 }
 
 func GetProduct(c *fiber.Ctx) error {
@@ -51,7 +53,7 @@ func GetProduct(c *fiber.Ctx) error {
 			"message": "No product found",
 		})
 	}
-	return c.JSON(product)
+	return c.Status(http.StatusOK).JSON(product)
 }
 
 func DeleteProduct(c *fiber.Ctx) error {

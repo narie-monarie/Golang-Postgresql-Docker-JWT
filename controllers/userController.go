@@ -37,7 +37,7 @@ func GetUsers(c *fiber.Ctx) error {
 			"message": "Failed to get users",
 		})
 	}
-	return c.JSON(users)
+	return c.Status(http.StatusOK).JSON(users)
 }
 
 func GetUser(c *fiber.Ctx) error {
@@ -49,7 +49,7 @@ func GetUser(c *fiber.Ctx) error {
 			"message": "No user found",
 		})
 	}
-	return c.JSON(user)
+	return c.Status(http.StatusOK).JSON(user)
 }
 
 func DeleteUser(c *fiber.Ctx) error {
