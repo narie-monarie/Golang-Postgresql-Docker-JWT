@@ -2,13 +2,13 @@
 
 ## TODO
 - [ ] Add JWT
-- [ ] Add Docker
 - [ ] Add Docker Compose
+- [ ] Add Docker
 
 ## Diagram
 ## Project Daily Progress
 
 ```mermaid
 graph LR;
- sqlx --> controllers --> routes --> ajwt --> docker --> postgres;
+ sqlx --> controllers --> routes --> JWT --> docker --> postgres;
 ```
